@@ -29,9 +29,9 @@ export default {
       appLogo: 'MerakiRoomLogo.png',
       sidebar: false,
       menuItems: [
-          { title: 'Home', path: '/', icon: 'mdi-home' },
-          { title: 'Our Story', path: '/about', icon: 'mdi-face' },
-          { title: 'Team', path: '/team', icon: 'mdi-lock_open' },
+          { title: 'Home', path: '/' },
+          { title: 'Our Story', path: '/about'},
+          { title: 'Team', path: '/team' },
           { title: 'Services', path: '/services' },
           { title: 'Book Appointment', path: '/signin' },
      ]
