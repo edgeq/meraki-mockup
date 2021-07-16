@@ -1,4 +1,8 @@
-# vuetify-app
+# Site Mockup for Meraki Room Chicago
+
+Mockup of an updated website for Meraki Room Chicago salon. 
+
+Currently, a squarespace site exists at MerakiRoomChicago.com. This new site will simplify what the current site offers. 
 
 ## Project setup
 ```
