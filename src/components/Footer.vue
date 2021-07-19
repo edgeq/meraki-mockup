@@ -33,7 +33,7 @@
 
 <script>
 export default {
-    name: 'footernav',
+    name: 'Footer',
     data: () => ({
     icons: [
         'mdi-home',

@@ -1,18 +1,19 @@
 <template>
-    <v-app-bar app prominent fixed dark class="site-header">
+    <v-app-bar app prominent dark color="rgb(0,0,0,0.5)" class="site-header">
         <v-toolbar-title>
             <router-link to="/" tag="span" style="cursor: pointer">
-                <img :src="appLogo" alt="Meraki Room Cicago" class="site-logo">
+                <img :src="appLogo" alt="Meraki Room Chicago" class="site-logo">
             </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-xs-only">
+        <v-toolbar-items class="hidden-s-only">
             <v-btn
             text
+            center
             v-for="item in menuItems"
             :key="item.title"
             :to="item.path">
-            <v-icon left dark>{{ item.icon }}</v-icon>
+            <!-- <v-icon left dark>{{ item.icon }}</v-icon> -->
             {{ item.title }}
             </v-btn>
         </v-toolbar-items>
@@ -22,32 +23,32 @@
 <script>
 
 export default {
-  name: "navbar",
+  name: "Navbar",
   data(){
     return {
       appTitle: 'Meraki Room Chicago',
       appLogo: 'MerakiRoomLogo.png',
-      sidebar: false,
       menuItems: [
           { title: 'Home', path: '/' },
           { title: 'Our Story', path: '/about'},
           { title: 'Team', path: '/team' },
           { title: 'Services', path: '/services' },
-          { title: 'Book Appointment', path: '/signin' },
+          { title: 'Book Appointment', path: '/book' },
      ]
     }
   },
 };
 </script>
 <style>
-.site-header {
-    height: 3rem;
-    overflow: auto;
+.v-toolbar__content {
+  padding: 0 !important;
 }
+
 .site-logo {
     width: 160px;
     position: relative;
-    top: 8px;
+    top: 16px;
+    left: 8px;
 }
 
 </style>

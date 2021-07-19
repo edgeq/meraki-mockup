@@ -1,11 +1,12 @@
 <template>
   <div class="home">
-    <v-card 
-      class="home-card pa-16 mb-8"
+    <!-- <v-card 
+      class="home-card pa-8 mb-8"
       dark
       elevation="4"
       outlined
       shaped
+      color="rgb(0,0,0,0.5)"
       >
       <h1 class="display-1">A full service salon in the heart of wicker park</h1>
     </v-card>
@@ -14,7 +15,7 @@
     rounded
     color="white"
     class="pa-8"
-    x-large><span class="display-1">Book An Appointment</span></v-btn>
+    x-large><span class="display-1">Book An Appointment</span></v-btn> -->
   </div>
 </template>
 
@@ -36,14 +37,18 @@
 
 <style>
 .home {
+  align-items: center;
   background-image: url('/img/ig_meraki_03.jpeg');
-  background-size: cover;
   background-position: bottom;
-  height: 100vh;
-
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
+  position: absolute;
+  top: -8rem;
+  width: 100%
 }
+
+
 </style>

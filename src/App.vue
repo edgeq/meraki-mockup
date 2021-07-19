@@ -1,25 +1,25 @@
 <template>
   <v-app>
-    <navbar />
+    <Navbar />
     
     <v-content>
       <router-view />
     </v-content>
 
-    <footernav />
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import navbar from './components/navbar';
-import footernav from './components/footernav';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 export default {
   name: 'App',
 
   components: {
-    navbar,
-    footernav,
+    Navbar,
+    Footer,
   },
 
   data() {
