@@ -81,8 +81,13 @@ export default {
 </script>
 
 <style>
-.mobile-menu{
-  display: block;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Josefin+Slab:ital,wght@0,100;1,100&display=swap');
+
+.v-application {
+  font-family: 'Josefin Sans', sans-serif;;
+}
+
+.mobile-menu {
   position: relative;
   top: 8rem;
 }

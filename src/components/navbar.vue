@@ -58,6 +58,17 @@ export default {
     .v-toolbar--prominent .v-toolbar__content {
        justify-content: center
     }
+
+    .site-logo {
+        left: auto;
+        top: 8px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .site-logo {
+        display: none;
+    }
 }
 
 </style>
