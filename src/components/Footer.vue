@@ -1,21 +1,17 @@
 <template>
-    <v-footer color="white"
-      v-bind="localAttrs"
-      :padless="padless"
+    <v-footer
+      padless
     >
-    <div class="footer-content">
-      <div class="contact">
+    <div class="footer-content pa-4">
+      <div class="contact mx-1">
         <span class="contact-title">Contact</span>
         <span class="contact-phone">773-687-8107</span>
         <span class="contact-address">2028 W. Division Street</span>
         <span class="contact-city">Chicago, IL 60622</span>
-        <span class="contact-email">hello@merakiroomchicago.com</span>
+        <span class="contact-email">Email Us</span>
       </div>
 
-      <div class="social">
-        <v-icon x-large>mdi-facebook</v-icon>
-        <v-icon x-large>mdi-instagram</v-icon>
-      </div>
+
 
       <div class="hours">
         <span class="hours-title">Hours</span>
@@ -28,40 +24,20 @@
 
       </div>
     </div>
+
+    <div class="footer-social">
+        <v-icon x-large>mdi-facebook</v-icon>
+        <v-icon x-large>mdi-instagram</v-icon>
+    </div>
     </v-footer>
 </template>
 
 <script>
 export default {
     name: 'Footer',
-    data: () => ({
-    icons: [
-        'mdi-home',
-        'mdi-email',
-        'mdi-calendar',
-        'mdi-delete',
-      ],
-      items: [
-        'default',
-        'absolute',
-        'fixed',
-      ],
-      padless: false,
-      variant: 'default',
-  }),
-  computed: {
-      localAttrs() {
-        const attrs = {}
-
-        if (this.variant === 'default') {
-          attrs.absolute = false
-          attrs.fixed = false
-        } else {
-          attrs[this.variant] = true
-        }
-        return attrs
-      },
-    },
+    data(){
+      return {}
+    }
 }
 </script>
 
@@ -69,17 +45,33 @@ export default {
 .footer-content {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   width: 100%;
+}
+
+.footer-social {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 .contact, .hours {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .hours {
   align-items: flex-start;
+}
+
+.contact-title, .hours-title {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-content {}
 }
 
 </style>

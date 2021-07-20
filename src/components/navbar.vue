@@ -1,22 +1,24 @@
 <template>
-    <v-app-bar app prominent dark color="rgb(0,0,0,0.5)" class="site-header">
+    <v-app-bar app prominent dark class="site-header">
         <v-toolbar-title>
             <router-link to="/" tag="span" style="cursor: pointer">
                 <img :src="appLogo" alt="Meraki Room Chicago" class="site-logo">
             </router-link>
         </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-s-only">
+        
+        <v-spacer class="hidden-xs-only"></v-spacer>
+        
+        <v-toolbar-items class="hidden-xs-only">
             <v-btn
             text
             center
             v-for="item in menuItems"
             :key="item.title"
             :to="item.path">
-            <!-- <v-icon left dark>{{ item.icon }}</v-icon> -->
             {{ item.title }}
             </v-btn>
         </v-toolbar-items>
+        
     </v-app-bar>
 </template>
 
@@ -49,6 +51,13 @@ export default {
     position: relative;
     top: 16px;
     left: 8px;
+    flex-shrink: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .v-toolbar--prominent .v-toolbar__content {
+       justify-content: center
+    }
 }
 
 </style>
