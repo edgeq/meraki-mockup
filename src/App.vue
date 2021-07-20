@@ -1,10 +1,10 @@
 <template>
-  <v-app>
+  <v-app class="pa-0 ma-0">
     <Navbar />
-    <v-app-bar-nav-icon class="mobile-menu d-flex d-sm-none" title="Menu" app @click.stop="drawer = !drawer">
-      <v-icon class="mobile-menu-icon" right>{{mdiCaret}}</v-icon>
-      <span class="mobile-menu-title">Menu</span>
-    </v-app-bar-nav-icon>
+      <v-app-bar-nav-icon app class="mobile-menu d-flex d-sm-none" title="Menu" @click.stop="drawer = !drawer">
+        <v-icon class="mobile-menu-icon" right>{{mdiCaret}}</v-icon>
+        <span class="mobile-menu-title">Menu</span>
+      </v-app-bar-nav-icon>
     <v-navigation-drawer
       v-model="drawer"
       class="d-flex d-sm-none"
@@ -58,11 +58,11 @@ export default {
       drawer: false,
       group: null,
       mobileNav: [
+        { title: 'Home', path: '/' },
         { title: 'Book Appointment', path: '/book' },
         { title: 'Our Story', path: '/about'},
         { title: 'Team', path: '/team' },
         { title: 'Services', path: '/services' },
-        { title: 'Home', path: '/' },
           
       ]
     }
@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style>
-.mobile-menu {
+.mobile-menu{
   display: block;
   position: relative;
   top: 8rem;

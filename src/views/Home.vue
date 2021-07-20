@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    
+    <div class="home-content pa-4">
+      <h1 class="white--text">Meraki Room Chicago</h1>
+      <h3 class="white--text">A full service salon in the heart of Wicker Park.</h3>
+      <v-btn class="mt-3">Book an Appointment</v-btn>
+    </div>
   </div>
 </template>
 
@@ -18,13 +22,15 @@
   background-image: url('/img/ig_meraki_03.jpeg');
   background-position: 75% 80%;
   background-size: cover;
-  height: 75vh; /* placeholder until there's stuff to fill the gap. */
+  height: 66vh;
   width: 100%;
   overflow: auto;
   
 }
 
 .home-content {
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
   flex-direction: column;
   display: flex;
   align-items: flex-start;

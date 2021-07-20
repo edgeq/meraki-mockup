@@ -16,7 +16,7 @@
       <div class="hours">
         <span class="hours-title">Hours</span>
         <span class="hours-days">Monday -  Thursday</span>
-        <span class="hours-times">11 PM - 8 PM</span>
+        <span class="hours-times">11 AM - 8 PM</span>
         <span class="hours-days">Friday</span>
         <span class="hours-times">8 AM - 5 PM</span>
         <span class="hours-days">Saturday</span>
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="footer-social">
+    <div class="footer-social mb-4">
         <v-icon x-large>mdi-facebook</v-icon>
         <v-icon x-large>mdi-instagram</v-icon>
     </div>
