@@ -6,20 +6,17 @@
           <img :src="appLogo" alt="Meraki Room Chicago" class="site-logo" />
         </router-link>
       </v-toolbar-title>
-      
+
       <v-spacer></v-spacer>
 
-    <v-app-bar-nav-icon
-      app
-      class="mobile-menu-icon d-flex d-sm-none"
-      x-large
-      @click.stop="drawer = !drawer"
-    >
-      <v-icon class="mobile-menu-icon">mdi-menu</v-icon>
-      <!-- <v-icon class="mobile-menu-icon" right>{{ mdiCaret }}</v-icon> -->
-      <!-- <span class="mobile-menu-title">Menu</span> -->
-    </v-app-bar-nav-icon>
-
+      <v-app-bar-nav-icon
+        app
+        class="mobile-menu-icon d-flex d-sm-none"
+        x-large
+        @click.stop="drawer = !drawer"
+      >
+        <v-icon class="mobile-menu-icon">mdi-menu</v-icon>
+      </v-app-bar-nav-icon>
 
       <v-toolbar-items class="hidden-xs-only">
         <v-btn
@@ -80,11 +77,6 @@ export default {
       ],
     };
   },
-  computed: {
-    mdiCaret: function () {
-      return this.drawer ? "mdi-menu-down" : "mdi-menu-right";
-    },
-  },
   watch: {
     group() {
       this.drawer = false;
@@ -98,7 +90,7 @@ export default {
 }
 
 .site-header {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .site-logo {
@@ -109,7 +101,6 @@ export default {
 }
 
 .mobile-menu-icon {
-    align-self: center;
+  align-self: center;
 }
-
 </style>
