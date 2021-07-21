@@ -1,36 +1,6 @@
 <template>
   <v-app class="pa-0 ma-0">
     <Navbar />
-      <v-app-bar-nav-icon app class="mobile-menu d-flex d-sm-none" title="Menu" @click.stop="drawer = !drawer">
-        <v-icon class="mobile-menu-icon" right>{{mdiCaret}}</v-icon>
-        <span class="mobile-menu-title">Menu</span>
-      </v-app-bar-nav-icon>
-    <v-navigation-drawer
-      v-model="drawer"
-      class="d-flex d-sm-none"
-      app
-      bottom
-      temporary
-    >
-      <v-list
-        nav
-        dense
-        v-for="item in mobileNav"
-        :key="item.title"
-      >
-          <v-list-item>
-            <v-list-item-title>
-               <v-btn
-                text
-                center
-                :to="item.path">
-                  {{ item.title }}
-                </v-btn>
-            </v-list-item-title>
-          </v-list-item>
-          <v-divider></v-divider>
-      </v-list>
-    </v-navigation-drawer>
 
       <v-main>
         <router-view />
@@ -55,27 +25,7 @@ export default {
   data() {
     return {
       appName: "Meraki Room Chicago",
-      drawer: false,
-      group: null,
-      mobileNav: [
-        { title: 'Home', path: '/' },
-        { title: 'Book Appointment', path: '/book' },
-        { title: 'Our Story', path: '/about'},
-        { title: 'Team', path: '/team' },
-        { title: 'Services', path: '/services' },
-          
-      ]
     }
-  },
-  computed: {
-    mdiCaret: function() {
-      return this.drawer ? 'mdi-menu-down' : 'mdi-menu-right'
-    }
-  },
-  watch: {
-    group() {
-      this.drawer = false
-    },
   },
 };
 </script>
@@ -87,13 +37,4 @@ export default {
   font-family: 'Josefin Sans', sans-serif;;
 }
 
-.mobile-menu {
-  position: relative;
-  top: 8rem;
-}
-
-.mobile-menu-title, .mobile-menu-icon {
-  position: relative;
-  left: 1rem;
-}
 </style>

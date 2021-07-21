@@ -1,43 +1,94 @@
 <template>
+  <div class="site-nav">
     <v-app-bar app prominent dark class="site-header">
-        <v-toolbar-title>
-            <router-link to="/" tag="span" style="cursor: pointer">
-                <img :src="appLogo" alt="Meraki Room Chicago" class="site-logo">
-            </router-link>
-        </v-toolbar-title>
-        
-        <v-spacer class="hidden-xs-only"></v-spacer>
-        
-        <v-toolbar-items class="hidden-xs-only">
-            <v-btn
-            text
-            center
-            v-for="item in menuItems"
-            :key="item.title"
-            :to="item.path">
-            {{ item.title }}
-            </v-btn>
-        </v-toolbar-items>
-        
+      <v-toolbar-title>
+        <router-link to="/" tag="span" style="cursor: pointer">
+          <img :src="appLogo" alt="Meraki Room Chicago" class="site-logo" />
+        </router-link>
+      </v-toolbar-title>
+      
+      <v-spacer></v-spacer>
+
+    <v-app-bar-nav-icon
+      app
+      class="mobile-menu-icon d-flex d-sm-none"
+      x-large
+      @click.stop="drawer = !drawer"
+    >
+      <v-icon class="mobile-menu-icon">mdi-menu</v-icon>
+      <!-- <v-icon class="mobile-menu-icon" right>{{ mdiCaret }}</v-icon> -->
+      <!-- <span class="mobile-menu-title">Menu</span> -->
+    </v-app-bar-nav-icon>
+
+
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn
+          text
+          center
+          v-for="item in menuItems"
+          :key="item.title"
+          :to="item.path"
+        >
+          {{ item.title }}
+        </v-btn>
+      </v-toolbar-items>
     </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      class="d-flex d-sm-none"
+      app
+      bottom
+      temporary
+    >
+      <v-list nav dense v-for="item in mobileNav" :key="item.title">
+        <v-list-item>
+          <v-list-item-title>
+            <v-btn text block :to="item.path">
+              {{ item.title }}
+            </v-btn>
+          </v-list-item-title>
+        </v-list-item>
+        <v-divider></v-divider>
+      </v-list>
+    </v-navigation-drawer>
+  </div>
 </template>
 
 <script>
-
 export default {
   name: "Navbar",
-  data(){
+  data() {
     return {
-      appTitle: 'Meraki Room Chicago',
-      appLogo: 'MerakiRoomLogo.png',
+      appTitle: "Meraki Room Chicago",
+      appLogo: "MerakiRoomLogo.png",
       menuItems: [
-          { title: 'Home', path: '/' },
-          { title: 'Our Story', path: '/about'},
-          { title: 'Team', path: '/team' },
-          { title: 'Services', path: '/services' },
-          { title: 'Book Appointment', path: '/book' },
-     ]
-    }
+        { title: "Home", path: "/" },
+        { title: "Our Story", path: "/about" },
+        { title: "Team", path: "/team" },
+        { title: "Services", path: "/services" },
+        { title: "Book Appointment", path: "/book" },
+      ],
+      drawer: false,
+      group: null,
+      mobileNav: [
+        { title: "Home", path: "/" },
+        { title: "Book Appointment", path: "/book" },
+        { title: "Services", path: "/services" },
+        { title: "Our Story", path: "/about" },
+        { title: "Team", path: "/team" },
+      ],
+    };
+  },
+  computed: {
+    mdiCaret: function () {
+      return this.drawer ? "mdi-menu-down" : "mdi-menu-right";
+    },
+  },
+  watch: {
+    group() {
+      this.drawer = false;
+    },
   },
 };
 </script>
@@ -46,29 +97,19 @@ export default {
   padding: 0 !important;
 }
 
+.site-header {
+    padding: 0 1rem;
+}
+
 .site-logo {
-    width: 160px;
-    position: relative;
-    top: 16px;
-    left: 8px;
-    flex-shrink: 1;
+  width: 160px;
+  position: relative;
+  top: 12px;
+  flex-shrink: 1;
 }
 
-@media screen and (max-width: 600px) {
-    .v-toolbar--prominent .v-toolbar__content {
-       justify-content: center
-    }
-
-    .site-logo {
-        left: auto;
-        top: 8px;
-    }
-}
-
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-    .site-logo {
-        display: none;
-    }
+.mobile-menu-icon {
+    align-self: center;
 }
 
 </style>

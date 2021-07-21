@@ -5,7 +5,7 @@
         <h1 class="heading-title white--text">MERAKI ROOM CHICAGO</h1>
         <h2 class="heading-sub white--text">A full service salon in the heart of Wicker Park.</h2>
       </div>
-      <v-btn class="mt-3" to="/book">Book an Appointment</v-btn>
+      <v-btn class="mt-3" x-large to="/book">Book an Appointment</v-btn>
     </div>
   </div>
 </template>
